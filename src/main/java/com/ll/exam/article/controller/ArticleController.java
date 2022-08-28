@@ -7,15 +7,17 @@ import com.ll.exam.annotation.GetMapping;
 import com.ll.exam.annotation.PostMapping;
 import com.ll.exam.article.dto.ArticleDto;
 import com.ll.exam.article.service.ArticleService;
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 // ArticleController 가 컨트롤러 이다.
 // 아래 ArticleController 클래스는 Controller 이다.
 @Controller
+@RequiredArgsConstructor
 public class ArticleController {
-    @Autowired
-    private ArticleService articleService;
+
+    private final ArticleService articleService;
 
     @GetMapping("/usr/article/list")
     public void showList(Rq rq) {
